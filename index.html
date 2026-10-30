@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meezaan Restaurant Karachi — Fine-Dining Courtyard (Concept)</title>
+<meta name="description" content="Meezaan Restaurant Karachi — fine-dining Pakistani, BBQ, Continental, Chinese and steaks concept on Main Boulevard, DHA Phase V. Interactive glassmorphic menu experience.">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<meta property="og:title" content="Meezaan Restaurant — Turn Your Evening Into an Experience">
+<meta property="og:type" content="website">
+<meta property="og:description" content="Fine dining in the heart of Karachi. Pakistani · BBQ · Continental · Chinese · Steaks. Open-air courtyard, golden chandeliers and a glowing mocktail bar.">
+<meta property="og:image" content="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1200&auto=format&fit=crop&q=75">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Restaurant","name":"Meezaan Restaurant","servesCuisine":["Pakistani","BBQ","Continental","Chinese","Steaks"],"telephone":"+92 300 1234567","email":"reservations@meezaan.pk","address":{"@type":"PostalAddress","streetAddress":"Plot 12-B, Main Boulevard, DHA Phase V","addressLocality":"Karachi","addressCountry":"PK"},"openingHours":["Mo-Su 13:00-17:00","Mo-Su 18:00-00:30"],"priceRange":"Rs 350 - Rs 19500"}
+</script>
+<style>
+:root{
+  --bg:#faf6ea;
+  --bg-2:#f4eeda;
+  --ink:#2b3a31;
+  --ink-soft:#5f6e62;
+  --ink-faint:#8b968b;
+  --gold:#b18a4f;
+  --gold-deep:#8f6d33;
+  --gold-soft:rgba(177,138,79,.16);
+  --terra:#b5502a;
+  --terra-soft:rgba(181,80,42,.12);
+  --dark:#233029;
+  --dark-2:#1c2620;
+  --glass:rgba(255,255,255,.58);
+  --glass-2:rgba(255,255,255,.72);
+  --glass-line:rgba(255,255,255,.85);
+  --radius:22px;
+  --shadow:0 24px 48px -22px rgba(101,71,32,.38);
+  --disp:"Cormorant Garamond",Georgia,serif;
+  --body:"Jost",system-ui,sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001s!important;transition-duration:.001s!important}
+}
+body{
+  font-family:var(--body);
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  background:
+    radial-gradient(900px 560px at 4% -6%, var(--gold-soft), transparent 60%),
+    radial-gradient(760px 520px at 98% 4%, var(--terra-soft), transparent 58%),
+    radial-gradient(820px 640px at 52% 116%, rgba(88,122,88,.14), transparent 62%),
+    linear-gradient(180deg,#fbf7ee 0%, #f6efdd 48%, #f3ecd9 100%);
+}
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  opacity:.035;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
+}
+::selection{background:var(--gold);color:#fffdf6}
+img{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--gold-deep);outline-offset:3px;border-radius:8px}
+section{scroll-margin-top:108px;position:relative}
+.container{width:min(1180px,92%);margin-inline:auto}
+
+.glass{
+  background:linear-gradient(135deg,rgba(255,255,255,.74),rgba(255,255,255,.5));
+  -webkit-backdrop-filter:blur(18px) saturate(1.6);
+  backdrop-filter:blur(18px) saturate(1.6);
+  border:1px solid var(--glass-line);
+  box-shadow:var(--shadow), inset 0 1px 0 rgba(255,255,255,.9);
+  border-radius:var(--radius);
+}
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .glass{background:rgba(255,255,255,.9)}
+}
+
+.kicker{
+  display:inline-flex;
+  align-items:center;
+  gap:.65rem;
+  font-size:.78rem;
+  font-weight:600;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--terra);
+}
+.kicker::before{content:"";width:26px;height:1px;background:var(--terra);opacity:.7}
+.h2{
+  font-family:var(--disp);
+  font-weight:600;
+  font-size:clamp(2.1rem,4.4vw,3.3rem);
+  line-height:1.12;
+  letter-spacing:-.01em;
+  margin:.55rem 0 .8rem;
+}
+.h2 em{font-style:italic;color:var(--gold-deep)}
+.lede{color:var(--ink-soft);max-width:560px;font-size:1.02rem}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.55rem;
+  padding:.85rem 1.7rem;
+  border-radius:999px;
+  font-weight:600;
+  font-size:.95rem;
+  letter-spacing:.02em;
+  text-decoration:none;
+  transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+}
+.btn svg{width:17px;height:17px}
+.btn:hover{transform:translateY(-2px)}
+.btn-dark{background:var(--dark);color:#f8f1e0;box-shadow:0 14px 28px -14px rgba(28,38,32,.7)}
+.btn-dark:hover{background:var(--dark-2);box-shadow:0 18px 34px -14px rgba(28,38,32,.8)}
+.btn-gold{background:linear-gradient(135deg,#c9a35f,#a87f3f);color:#fffdf4;box-shadow:0 14px 28px -14px rgba(143,109,51,.75)}
+.btn-gold:hover{box-shadow:0 18px 34px -14px rgba(143,109,51,.85)}
+.btn-ghost{background:rgba(255,255,255,.35);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.75);color:var(--ink)}
+.btn-ghost:hover{background:rgba(255,255,255,.55)}
+
+header.nav{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:60;
+  padding:14px 0;
+  transition:padding .3s ease;
+}
+header.nav .bar{
+  width:min(1180px,94%);
+  margin-inline:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:.55rem .7rem .55rem 1.2rem;
+  border-radius:999px;
+  background:rgba(255,255,255,.55);
+  -webkit-backdrop-filter:blur(16px) saturate(1.5);
+  backdrop-filter:blur(16px) saturate(1.5);
+  border:1px solid rgba(255,255,255,.8);
+  box-shadow:0 12px 30px -18px rgba(101,71,32,.4);
+}
+header.nav.scrolled .bar{background:rgba(255,255,255,.82)}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none}
+.brand img{height:34px;width:auto}
+.nav-links{display:flex;align-items:center;gap:.25rem;list-style:none}
+.nav-links a{
+  text-decoration:none;
+  font-weight:500;
+  font-size:.92rem;
+  color:var(--ink-soft);
+  padding:.45rem .8rem;
+  border-radius:999px;
+  transition:color .2s ease, background .2s ease;
+}
+.nav-links a:hover{color:var(--ink);background:rgba(255,255,255,.65)}
+.nav-links a.active{
+  color:var(--ink);
+  background:rgba(255,255,255,.75);
+  box-shadow:inset 0 0 0 1px rgba(177,138,79,.4);
+}
+.nav-cta{display:flex;align-items:center;gap:.5rem}
+.nav-burger{display:none;width:42px;height:42px;border-radius:999px;background:rgba(255,255,255,.6);align-items:center;justify-content:center}
+.nav-burger svg{width:20px;height:20px;stroke:var(--ink)}
+.mobile-menu{
+  display:none;
+  width:min(1180px,94%);
+  margin:10px auto 0;
+  padding:.6rem;
+  border-radius:20px;
+  background:rgba(255,255,255,.86);
+  -webkit-backdrop-filter:blur(18px);
+  backdrop-filter:blur(18px);
+  border:1px solid rgba(255,255,255,.9);
+  box-shadow:var(--shadow);
+}
+.mobile-menu a{display:block;padding:.7rem 1rem;border-radius:12px;text-decoration:none;font-weight:500;color:var(--ink)}
+.mobile-menu a:hover{background:rgba(255,255,255,.7)}
+.mobile-menu a.active{background:rgba(255,255,255,.7);color:var(--gold-deep)}
+header.nav.open .mobile-menu{display:block}
+
+.band{padding:90px 0;color:#f8f1e0;overflow:hidden}
+.band::before{content:"";position:absolute;inset:0;z-index:-2}
+.band-img{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover}
+.band-veil{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(30,22,12,.45),rgba(30,22,12,.62))}
+.band .kicker{color:#e8c893}
+.band .kicker::before{background:#e8c893}
+.band .h2{color:#fffdf4}
+.band .lede{color:rgba(255,251,240,.85)}
+
+.reserve-card{
+  padding:3rem 3.2rem;
+  text-align:center;
+  max-width:760px;
+  margin-inline:auto;
+}
+.reserve-card .h2{margin-bottom:.4rem}
+.reserve-card .lede{margin:0 auto 1.8rem}
+.reserve-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem;margin-bottom:1.4rem}
+.reserve-note{font-size:.82rem;color:var(--ink-soft)}
+
+.stats{padding:8px 0 30px}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.stat{padding:1.4rem 1.2rem;text-align:center}
+.stat b{
+  display:block;
+  font-family:var(--disp);
+  font-weight:700;
+  font-size:2rem;
+  color:var(--gold-deep);
+  line-height:1.1;
+}
+.stat span{font-size:.82rem;color:var(--ink-soft);letter-spacing:.04em}
+
+footer{background:var(--dark);color:#cfc8b4;padding:64px 0 30px}
+.foot-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:2.5rem;padding-bottom:2.2rem;border-bottom:1px solid rgba(248,241,224,.14)}
+.foot-mark{font-family:var(--disp);font-size:2rem;font-weight:600;color:#e9d3a2;line-height:1.1}
+.foot-mark i{font-style:normal;color:#c96b45}
+.foot-col p{font-size:.9rem;color:rgba(236,228,208,.75);max-width:340px;margin-top:.6rem}
+.foot-col h4{font-size:.78rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:#e9d3a2;margin-bottom:1rem}
+.foot-col ul{list-style:none}
+.foot-col li{margin-bottom:.5rem}
+.foot-col a{font-size:.92rem;color:rgba(236,228,208,.78);text-decoration:none}
+.foot-col a:hover{color:#fffdf4}
+.foot-base{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-top:1.6rem;font-size:.78rem;color:rgba(236,228,208,.55)}
+.foot-base a{color:rgba(236,228,208,.75);text-decoration:none}
+.foot-base a:hover{color:#fffdf4}
+
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s ease, transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
+
+.hero{padding:150px 0 70px}
+.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:56px;align-items:center}
+.hero h1{
+  font-family:var(--disp);
+  font-weight:600;
+  font-size:clamp(2.7rem,5.6vw,4.4rem);
+  line-height:1.06;
+  letter-spacing:-.015em;
+  margin:.7rem 0 1.1rem;
+}
+.hero h1 em{font-style:italic;color:var(--gold-deep)}
+.hero .lede{font-size:1.06rem;margin-bottom:1.6rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.8rem;margin-bottom:1.9rem}
+.hero-chips{display:flex;flex-wrap:wrap;gap:.6rem}
+.chip{
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+  padding:.55rem 1rem;
+  border-radius:999px;
+  font-size:.85rem;
+  font-weight:500;
+  color:var(--ink-soft);
+}
+.chip svg{width:15px;height:15px;stroke:var(--gold-deep);flex:none}
+.chip strong{color:var(--ink);font-weight:600}
+.hero-visual{position:relative}
+.hero-photo{
+  border-radius:30px;
+  overflow:hidden;
+  box-shadow:0 40px 70px -34px rgba(56,40,14,.55);
+  border:1px solid rgba(255,255,255,.8);
+}
+.hero-photo img{width:100%;aspect-ratio:4/3.4;object-fit:cover}
+.float-card{
+  position:absolute;
+  left:-26px;
+  bottom:34px;
+  padding:1rem 1.25rem;
+  display:flex;
+  align-items:center;
+  gap:.9rem;
+  max-width:300px;
+}
+.float-icon{
+  width:44px;height:44px;
+  flex:none;
+  border-radius:14px;
+  background:linear-gradient(135deg,#c9a35f,#a87f3f);
+  display:flex;align-items:center;justify-content:center;
+}
+.float-icon svg{width:20px;height:20px;stroke:#fffdf4}
+.float-card b{display:block;font-weight:600;font-size:.95rem;line-height:1.35}
+.float-card span{font-size:.8rem;color:var(--ink-soft)}
+.float-tag{
+  position:absolute;
+  top:22px;
+  right:-14px;
+  padding:.5rem .95rem;
+  font-size:.78rem;
+  font-weight:600;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--gold-deep);
+}
+
+.signatures{padding:60px 0}
+.sig-head{display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.sig-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:230px;gap:1.1rem;margin-top:1.8rem}
+.sig{
+  position:relative;
+  border-radius:24px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.85);
+  box-shadow:0 26px 48px -26px rgba(56,40,14,.5);
+}
+.sig.wide{grid-column:span 2;grid-row:span 2}
+.sig img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+.sig:hover img{transform:scale(1.05)}
+.sig-cap{
+  position:absolute;
+  left:12px;right:12px;bottom:12px;
+  padding:.85rem 1.05rem;
+  border-radius:16px;
+  background:rgba(255,255,255,.66);
+  -webkit-backdrop-filter:blur(14px) saturate(1.6);
+  backdrop-filter:blur(14px) saturate(1.6);
+  border:1px solid rgba(255,255,255,.85);
+}
+.sig-cap b{display:block;font-weight:600;font-size:.95rem;color:var(--ink)}
+.sig-cap span{font-size:.78rem;color:var(--ink-soft)}
+.sig-price{
+  position:absolute;
+  top:12px;left:12px;
+  padding:.4rem .85rem;
+  border-radius:999px;
+  font-size:.8rem;
+  font-weight:600;
+  color:#fffdf4;
+  background:rgba(35,48,41,.72);
+  -webkit-backdrop-filter:blur(10px);
+  backdrop-filter:blur(10px);
+}
+
+.ambiance{padding:70px 0}
+.amb-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:200px;gap:1.1rem}
+.amb{position:relative;border-radius:22px;overflow:hidden;border:1px solid rgba(255,255,255,.85);box-shadow:0 22px 42px -24px rgba(56,40,14,.5)}
+.amb.tall{grid-row:span 2}
+.amb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+.amb:hover img{transform:scale(1.05)}
+.amb-tag{
+  position:absolute;
+  left:10px;bottom:10px;
+  padding:.42rem .85rem;
+  border-radius:999px;
+  font-size:.75rem;
+  font-weight:500;
+  color:var(--ink);
+  background:rgba(255,255,255,.68);
+  -webkit-backdrop-filter:blur(10px) saturate(1.5);
+  backdrop-filter:blur(10px) saturate(1.5);
+  border:1px solid rgba(255,255,255,.85);
+}
+.amb-panel{grid-column:span 1;grid-row:span 2;padding:1.6rem 1.4rem;display:flex;flex-direction:column;justify-content:flex-end}
+.amb-panel h3{font-family:var(--disp);font-size:1.75rem;font-weight:600;line-height:1.2;margin:.4rem 0 .6rem}
+.amb-panel p{font-size:.9rem;color:var(--ink-soft)}
+.amb-panel .kicker{margin-bottom:.2rem}
+
+.explore{padding:16px 0 26px}
+.explore-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+.x-card{
+  display:block;
+  padding:1.7rem 1.6rem;
+  text-decoration:none;
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+.x-card:hover{transform:translateY(-4px)}
+.x-ico{
+  width:46px;height:46px;
+  border-radius:15px;
+  background:linear-gradient(135deg,#c9a35f,#a87f3f);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:1rem;
+}
+.x-ico svg{width:20px;height:20px;stroke:#fffdf4}
+.x-card b{display:block;font-family:var(--disp);font-size:1.4rem;font-weight:600;margin-bottom:.35rem;color:var(--ink)}
+.x-card p{font-size:.88rem;color:var(--ink-soft);margin-bottom:1rem}
+.x-card .mini{display:inline-flex;align-items:center;gap:.4rem;font-size:.86rem;font-weight:600;color:var(--gold-deep)}
+.x-card .mini svg{width:15px;height:15px;transition:transform .25s ease}
+.x-card:hover .mini svg{transform:translateX(3px)}
+
+.reviews{padding:64px 0 84px}
+.rev-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:1.1rem}
+.rev{padding:1.6rem 1.5rem}
+.rev-stars{display:flex;gap:2px;margin-bottom:.8rem}
+.rev-stars svg{width:15px;height:15px;fill:var(--gold);stroke:var(--gold)}
+.rev q{display:block;font-family:var(--disp);font-style:italic;font-size:1.22rem;line-height:1.45;color:var(--ink);quotes:none;margin-bottom:1rem}
+.rev-meta{display:flex;align-items:center;gap:.7rem}
+.rev-ava{
+  width:38px;height:38px;border-radius:999px;flex:none;
+  background:linear-gradient(135deg,#c9a35f,#a87f3f);
+  display:flex;align-items:center;justify-content:center;
+  color:#fffdf4;font-weight:600;font-size:.9rem;
+}
+.rev-meta b{display:block;font-size:.86rem;font-weight:600;line-height:1.3}
+.rev-meta span{font-size:.76rem;color:var(--ink-faint)}
+.rev-score{display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:.35rem}
+.rev-score .big{font-family:var(--disp);font-weight:700;font-size:3.4rem;line-height:1;color:var(--gold-deep)}
+.rev-score .sub{display:flex;align-items:center;gap:.45rem;font-size:.86rem;color:var(--ink-soft)}
+.rev-score .sub svg{width:15px;height:15px;fill:var(--gold);stroke:var(--gold)}
+
+@media (max-width:1020px){
+  .hero-grid{grid-template-columns:1fr;gap:44px}
+  .hero-visual{order:-1}
+  .float-card{left:14px;bottom:-24px}
+  .stats-row{grid-template-columns:repeat(2,1fr)}
+  .rev-grid{grid-template-columns:1fr 1fr}
+  .rev-score{flex-direction:row;align-items:center;gap:1.2rem}
+  .explore-grid{grid-template-columns:1fr}
+}
+@media (max-width:720px){
+  .nav-links,.nav-cta .btn span.txt{display:none}
+  .nav-cta .btn{padding:.85rem 1.2rem}
+  .nav-burger{display:flex}
+  .hero{padding:120px 0 60px}
+  .hero-photo img{aspect-ratio:4/3}
+  .float-tag{right:10px}
+  .sig-grid{grid-template-columns:1fr 1fr;grid-auto-rows:190px}
+  .sig.wide{grid-column:span 2;grid-row:span 1}
+  .amb-grid{grid-template-columns:1fr 1fr;grid-auto-rows:170px}
+  .amb-panel{grid-column:span 2;grid-row:span 1;justify-content:flex-end}
+  .rev-grid{grid-template-columns:1fr}
+  .rev-score{flex-direction:column;align-items:flex-start}
+  .foot-grid{grid-template-columns:1fr;gap:1.8rem}
+  .reserve-card{padding:2.2rem 1.5rem}
+}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="bar">
+    <a class="brand" href="index.html" aria-label="Meezaan Restaurant home">
+      <img src="assets/logo.svg" alt="Meezaan Restaurant logo">
+    </a>
+    <nav aria-label="Primary">
+      <ul class="nav-links">
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="visit.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-dark" href="https://wa.me/923001234567" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+        <span class="txt">Reserve a Table</span>
+      </a>
+      <button class="nav-burger" id="burger" aria-label="Open menu" aria-expanded="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="events.html">Events</a>
+    <a href="visit.html">Contact</a>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="reveal in">
+        <span class="kicker">Fine Dining · DHA Phase V, Karachi</span>
+        <h1>Turn your evening into <em>an experience.</em></h1>
+        <p class="lede"><strong>Meezaan</strong> — the Urdu word for <strong>balance</strong> — is a multi-cuisine fine-dining courtyard in DHA Phase V, where golden chandeliers, an open-air mocktail bar and plates from four kitchens set your evening perfectly.</p>
+        <div class="hero-actions">
+          <a class="btn btn-dark" href="menu.html">Explore the Menu
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="https://wa.me/923001234567" target="_blank" rel="noopener">Reserve via WhatsApp</a>
+        </div>
+        <div class="hero-chips">
+          <span class="chip glass">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span>Lunch <strong>1–5 PM</strong> · Dinner <strong>6 PM–12:30 AM</strong></span>
+          </span>
+          <span class="chip glass">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Plot 12-B, <strong>Main Boulevard</strong></span>
+          </span>
+          <span class="chip glass">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <span><strong>4.8</strong> on Google</span>
+          </span>
+        </div>
+      </div>
+      <div class="hero-visual reveal in d2">
+        <div class="hero-photo">
+          <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?w=1600&auto=format&fit=crop&q=80" alt="String-lit evening courtyard dining under a golden sky at Meezaan" fetchpriority="high">
+        </div>
+        <div class="float-card glass">
+          <span class="float-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </span>
+          <span><b>150,000+ guests served</b><span>Open-air courtyard &amp; rooftop dining</span></span>
+        </div>
+        <span class="float-tag glass">Since 2024</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats">
+    <div class="container stats-row">
+      <div class="stat glass reveal"><b>4.8★</b><span>Google rating from diners</span></div>
+      <div class="stat glass reveal d1"><b>150K+</b><span>happy guests served</span></div>
+      <div class="stat glass reveal d2"><b>500+</b><span>custom birthday themes</span></div>
+      <div class="stat glass reveal d3"><b>65%</b><span>of celebrators return yearly</span></div>
+    </div>
+  </section>
+
+  <section class="signatures" id="signatures">
+    <div class="container">
+      <div class="sig-head">
+        <div class="reveal">
+          <span class="kicker">Chef's Signatures</span>
+          <h2 class="h2">Plates we're <em>famous for</em></h2>
+        </div>
+        <a class="btn btn-ghost reveal d1" href="menu.html">See the full menu
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="sig-grid">
+        <div class="sig wide reveal">
+          <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1600&auto=format&fit=crop&q=80" alt="BBQ kabab platter with fresh herbs at Meezaan" loading="lazy">
+          <span class="sig-price">Rs 4,900</span>
+          <div class="sig-cap"><b>BBQ Kabab Platter</b><span>Beef makhmali, chicken zirh, beef dhaga, mutton &amp; fish kabab — served with rice</span></div>
+        </div>
+        <div class="sig reveal d1">
+          <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=1200&auto=format&fit=crop&q=80" alt="Famous Meezaan sizzling burger with cheese sauce" loading="lazy">
+          <span class="sig-price">Rs 1,745</span>
+          <div class="sig-cap"><b>Meezaan Sizzling Burger</b><span>Smashed patty on a sizzling pan with cheese sauce</span></div>
+        </div>
+        <div class="sig reveal d2">
+          <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=1200&auto=format&fit=crop&q=80" alt="Korean chicken bites with sesame seeds" loading="lazy">
+          <span class="sig-price">Rs 1,145</span>
+          <div class="sig-cap"><b>Korean Chicken Bites</b><span>Tangy, lightly coated, topped with sesame</span></div>
+        </div>
+        <div class="sig reveal d3">
+          <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=1200&auto=format&fit=crop&q=80" alt="Crispy Japanese prawn tempura plated with dip" loading="lazy">
+          <span class="sig-price">Rs 1,650</span>
+          <div class="sig-cap"><b>Japanese Prawn Tempura</b><span>Lightly coated jumbo prawns, soy dip</span></div>
+        </div>
+        <div class="sig reveal d4">
+          <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=1200&auto=format&fit=crop&q=80" alt="Loaded casuals spread with hummus and pita" loading="lazy">
+          <span class="sig-price">From 895</span>
+          <div class="sig-cap"><b>Loaded Casuals</b><span>Hummus &amp; pita, dynamite bites, loaded bowls</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ambiance" id="ambiance">
+    <div class="container">
+      <div class="amb-grid">
+        <div class="amb tall reveal">
+          <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=1200&auto=format&fit=crop&q=80" alt="Warm dining room filled with plants and golden light" loading="lazy">
+          <span class="amb-tag">The scale wall dining room</span>
+        </div>
+        <div class="amb-panel glass reveal d1">
+          <span class="kicker">The Ambiance</span>
+          <h3>The best ambiance in <em style="color:var(--gold-deep);font-style:italic">Karachi</em></h3>
+          <p>A touch of elegance and a taste of excellence. Golden chandeliers, a glowing open-air mocktail bar and courtyard fairy lights — every corner set to a perfect balance.</p>
+        </div>
+        <div class="amb reveal d2">
+          <img src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?w=1200&auto=format&fit=crop&q=80" alt="Chandeliers glowing above the dining atrium" loading="lazy">
+          <span class="amb-tag">Atrium chandeliers</span>
+        </div>
+        <div class="amb reveal d3">
+          <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=1200&auto=format&fit=crop&q=80" alt="Glowing open-air mocktail bar at golden hour" loading="lazy">
+          <span class="amb-tag">Open-air mocktail bar</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="explore">
+    <div class="container">
+      <div class="explore-grid">
+        <a class="x-card glass reveal" href="menu.html">
+          <span class="x-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+          <b>The Full Menu</b>
+          <p>Twelve categories, ~120 real dishes with actual prices — browse by tab, from BBQ platters to the mocktail bar.</p>
+          <span class="mini">Browse the menu
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+        <a class="x-card glass reveal d1" href="events.html">
+          <span class="x-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l2.4 5.4L20 8l-4 3.9.9 5.6-4.9-2.7-4.9 2.7.9-5.6L4 8l5.6-.6z"/></svg></span>
+          <b>Celebrations</b>
+          <p>500+ bespoke birthday themes, corporate dinners, nikkah ceremonies and Ramadan iftar spreads.</p>
+          <span class="mini">Plan an occasion
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+        <a class="x-card glass reveal d2" href="visit.html">
+          <span class="x-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <b>Find Us &amp; Reserve</b>
+          <p>Main Boulevard, DHA Phase V. Hours, map, free valet parking and one-minute WhatsApp reservations.</p>
+          <span class="mini">Plan your visit
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews" id="reviews">
+    <div class="container">
+      <div class="reveal">
+        <span class="kicker">Valuable Guests</span>
+        <h2 class="h2">What Karachi <em>says about us</em></h2>
+      </div>
+      <div class="rev-grid">
+        <div class="rev glass reveal rev-score">
+          <span class="big">4.8</span>
+          <div>
+            <div class="rev-stars" aria-label="4.8 out of 5 stars">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            </div>
+            <span class="sub">Google rating · 150K+ guests served</span>
+          </div>
+        </div>
+        <div class="rev glass reveal d1">
+          <div class="rev-stars" aria-label="5 stars">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+          </div>
+          <q>The courtyard at golden hour, four kitchens under one roof — every plate felt like a celebration.</q>
+          <div class="rev-meta">
+            <span class="rev-ava">A</span>
+            <span><b>Amna R.</b><span>Posted on Google</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <img class="band-img" src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&auto=format&fit=crop&q=80" alt="" loading="lazy" aria-hidden="true">
+    <div class="band-veil"></div>
+    <div class="container">
+      <div class="reserve-card glass reveal">
+        <span class="kicker" style="color:var(--terra)">Reservations</span>
+        <h2 class="h2">Secure your <em>serene evening</em></h2>
+        <p class="lede">Tables go fast on weekends — reserve on WhatsApp in under a minute, or simply call us.</p>
+        <div class="reserve-actions">
+          <a class="btn btn-dark" href="https://wa.me/923001234567" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            Reserve on WhatsApp
+          </a>
+          <a class="btn btn-ghost" href="tel:+923001234567">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            0300-1234567
+          </a>
+        </div>
+        <p class="reserve-note">Reservations accepted Mon–Fri · weekends are walk-in, first come first served · free valet parking</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <div class="foot-mark">Meezaan<i>.</i></div>
+        <p>Located in the heart of Karachi on Main Boulevard, DHA Phase V, Meezaan brings together the richness of multi-cuisine flavors and the warmth of Pakistani hospitality. We don't just serve food — we create moods, memories and moments that last.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="visit.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Reach Us</h4>
+        <ul>
+          <li><a href="tel:+923001234567">0300-1234567</a></li>
+          <li><a href="mailto:reservations@meezaan.pk">reservations@meezaan.pk</a></li>
+          <li><a href="https://wa.me/923001234567" target="_blank" rel="noopener">WhatsApp Reservations</a></li>
+          <li><a href="https://www.instagram.com/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/" target="_blank" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>Meezaan concept demo · all food &amp; interior imagery via stock (Unsplash)</span>
+      <span>© <span id="year">2026</span> Meezaan Restaurant, Karachi</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var nav = document.getElementById("nav");
+  var burger = document.getElementById("burger");
+  burger.addEventListener("click", function(){
+    var open = nav.classList.toggle("open");
+    burger.setAttribute("aria-expanded", open ? "true" : "false");
+  });
+  document.querySelectorAll("#mobileMenu a").forEach(function(a){
+    a.addEventListener("click", function(){ nav.classList.remove("open"); burger.setAttribute("aria-expanded","false"); });
+  });
+  var onScroll = function(){ nav.classList.toggle("scrolled", window.scrollY > 24); };
+  window.addEventListener("scroll", onScroll, {passive:true});
+  onScroll();
+
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var reveals = document.querySelectorAll(".reveal");
+  if (reduce || !("IntersectionObserver" in window)){
+    reveals.forEach(function(el){ el.classList.add("in"); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if (en.isIntersecting){ en.target.classList.add("in"); io.unobserve(en.target); }
+      });
+    }, {threshold:.12, rootMargin:"0px 0px -40px 0px"});
+    reveals.forEach(function(el){ io.observe(el); });
+  }
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
