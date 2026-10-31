@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://images.unsplash.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Restaurant","name":"Meezaan Restaurant","servesCuisine":["Pakistani","BBQ","Continental","Chinese","Steaks"],"telephone":"+92 300 1234567","email":"reservations@meezaan.pk","address":{"@type":"PostalAddress","streetAddress":"Plot 12-B, Main Boulevard, DHA Phase V","addressLocality":"Karachi","addressCountry":"PK"},"openingHours":["Mo-Su 13:00-17:00","Mo-Su 18:00-00:30"],"priceRange":"Rs 350 - Rs 19500"}
+{"@context":"https://schema.org","@type":"Restaurant","name":"Meezaan Restaurant","servesCuisine":["Pakistani","BBQ","Continental","Chinese","Steaks"],"telephone":"+92 300 1234567","email":"reservations@meezaan.pk","address":{"@type":"PostalAddress","streetAddress":"Plot 12-B, Main Boulevard, DHA Phase V","addressLocality":"Karachi","addressCountry":"PK"},"openingHours":["Mo-Su 13:00-17:00","Mo-Su 18:00-00:30"],"priceRange":"Rs 90 - Rs 19500"}
 </script>
 <style>
 :root{
@@ -111,9 +111,10 @@ section{scroll-margin-top:108px;position:relative}
   line-height:1.12;
   letter-spacing:-.01em;
   margin:.55rem 0 .8rem;
+  text-wrap:balance;
 }
 .h2 em{font-style:italic;color:var(--gold-deep)}
-.lede{color:var(--ink-soft);max-width:560px;font-size:1.02rem}
+.lede{color:var(--ink-soft);max-width:560px;font-size:1.02rem;text-wrap:pretty}
 
 .btn{
   display:inline-flex;
@@ -130,6 +131,7 @@ section{scroll-margin-top:108px;position:relative}
 }
 .btn svg{width:17px;height:17px}
 .btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0) scale(.96)}
 .btn-dark{background:var(--dark);color:#f8f1e0;box-shadow:0 14px 28px -14px rgba(28,38,32,.7)}
 .btn-dark:hover{background:var(--dark-2);box-shadow:0 18px 34px -14px rgba(28,38,32,.8)}
 .btn-gold{background:linear-gradient(135deg,#c9a35f,#a87f3f);color:#fffdf4;box-shadow:0 14px 28px -14px rgba(143,109,51,.75)}
@@ -210,13 +212,16 @@ header.nav.open .mobile-menu{display:block}
 .band .lede{color:rgba(255,251,240,.85)}
 
 .reserve-card{
+  background:linear-gradient(135deg,rgba(255,253,248,.93),rgba(255,253,248,.84));
   padding:3rem 3.2rem;
   text-align:center;
   max-width:760px;
   margin-inline:auto;
 }
-.reserve-card .h2{margin-bottom:.4rem}
-.reserve-card .lede{margin:0 auto 1.8rem}
+.reserve-card .kicker{color:var(--terra)}
+.reserve-card .kicker::before{background:var(--terra)}
+.reserve-card .h2{color:var(--ink);margin-bottom:.4rem}
+.reserve-card .lede{color:var(--ink-soft);margin:0 auto 1.8rem}
 .reserve-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:.8rem;margin-bottom:1.4rem}
 .reserve-note{font-size:.82rem;color:var(--ink-soft)}
 
@@ -243,15 +248,16 @@ footer{background:var(--dark);color:#cfc8b4;padding:64px 0 30px}
 .visit-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:1.2rem;margin-top:1.6rem}
 .visit-cards{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
 .vcard{padding:1.45rem 1.4rem}
-.vcard-ico{width:42px;height:42px;border-radius:13px;background:var(--gold-soft);display:flex;align-items:center;justify-content:center;margin-bottom:.85rem}
-.vcard-ico svg{width:18px;height:18px;stroke:var(--gold-deep)}
+.vcard-ico{width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,#c9a35f,#a87f3f);display:flex;align-items:center;justify-content:center;margin-bottom:.85rem}
+.vcard-ico svg{width:18px;height:18px;stroke:#fffdf4}
 .vcard b{display:block;font-size:.95rem;font-weight:600;margin-bottom:.25rem}
-.vcard p{font-size:.88rem;color:var(--ink-soft)}
+.vcard p{font-size:.88rem;color:var(--ink-soft);text-wrap:pretty}
 .vcard a{color:var(--gold-deep);font-weight:500;text-decoration:none}
 .vcard a:hover{text-decoration:underline}
 .map-wrap{border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,.85);box-shadow:var(--shadow);min-height:420px;position:relative}
 .map-wrap iframe{position:absolute;inset:0;width:100%;height:100%;border:0;filter:saturate(.9)}
-.visit-social{display:flex;gap:.7rem;margin-top:1.1rem}
+.visit-social{display:flex;gap:.7rem;margin-top:1.1rem;grid-column:1/-1}
+.vcard-sub{margin-top:.4rem}
 .soc{
   width:44px;height:44px;border-radius:999px;
   display:flex;align-items:center;justify-content:center;
@@ -317,8 +323,8 @@ footer{background:var(--dark);color:#cfc8b4;padding:64px 0 30px}
     <div class="container">
       <div class="reveal">
         <span class="kicker">Find Us</span>
-        <h2 class="h2">DHA Phase V, <em>in the heart of Karachi</em></h2>
-        <p class="lede">Five minutes from the Clifton crossroads, with free valet parking at the courtyard gate. Here's everything you need to plan — and reserve — your evening.</p>
+        <h1 class="h2">DHA Phase V, <em>in the heart of Karachi</em></h1>
+        <p class="lede">Minutes from the Clifton crossroads, with free valet parking at the courtyard gate. Here's everything you need to plan — and reserve — your evening.</p>
       </div>
     </div>
   </section>
@@ -331,7 +337,7 @@ footer{background:var(--dark);color:#cfc8b4;padding:64px 0 30px}
             <span class="vcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
             <b>Address</b>
             <p>Plot 12-B, Main Boulevard Rd,<br>DHA Phase V, Karachi, Pakistan</p>
-            <a href="https://www.google.com/maps?q=Main+Boulevard+DHA+Phase+V+Karachi" target="_blank" rel="noopener">Open in Google Maps</a>
+            <a href="https://www.google.com/maps?q=Meezaan+Restaurant+Main+Boulevard+DHA+Phase+V+Karachi" target="_blank" rel="noopener">Open in Google Maps</a>
           </div>
           <div class="vcard glass reveal d1">
             <span class="vcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
@@ -347,9 +353,9 @@ footer{background:var(--dark);color:#cfc8b4;padding:64px 0 30px}
             <span class="vcard-ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 6L2 7"/></svg></span>
             <b>Email</b>
             <p><a href="mailto:reservations@meezaan.pk">reservations@meezaan.pk</a></p>
-            <p style="margin-top:.4rem">Bank card discounts available on dine-in</p>
+            <p class="vcard-sub">We typically reply to reservation requests within the hour</p>
           </div>
-          <div class="visit-social reveal d3" style="grid-column:1/-1">
+          <div class="visit-social reveal d3">
             <a class="soc" href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Meezaan on Facebook">
               <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
             </a>
@@ -362,7 +368,7 @@ footer{background:var(--dark);color:#cfc8b4;padding:64px 0 30px}
           </div>
         </div>
         <div class="map-wrap reveal d2">
-          <iframe src="https://www.google.com/maps?q=Main+Boulevard,+DHA+Phase+V,+Karachi&output=embed" title="Map showing Meezaan location in DHA Phase V, Karachi" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          <iframe src="https://www.google.com/maps?q=Meezaan+Restaurant+Main+Boulevard+DHA+Phase+V+Karachi&output=embed" title="Map showing Meezaan location in DHA Phase V, Karachi" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
         </div>
       </div>
     </div>
@@ -373,9 +379,9 @@ footer{background:var(--dark);color:#cfc8b4;padding:64px 0 30px}
     <div class="band-veil"></div>
     <div class="container">
       <div class="reserve-card glass reveal">
-        <span class="kicker" style="color:var(--terra)">Reservations</span>
+        <span class="kicker">Reservations</span>
         <h2 class="h2">Secure your <em>serene evening</em></h2>
-        <p class="lede">Tables go fast on weekends — reserve on WhatsApp in under a minute, or simply call us.</p>
+        <p class="lede">Reserve on WhatsApp in under a minute, or simply call us.</p>
         <div class="reserve-actions">
           <a class="btn btn-dark" href="https://wa.me/923001234567" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
@@ -398,7 +404,7 @@ footer{background:var(--dark);color:#cfc8b4;padding:64px 0 30px}
     <div class="foot-grid">
       <div class="foot-col">
         <div class="foot-mark">Meezaan<i>.</i></div>
-        <p>Located in the heart of Karachi on Main Boulevard, DHA Phase V, Meezaan brings together the richness of multi-cuisine flavors and the warmth of Pakistani hospitality. We don't just serve food — we create moods, memories and moments that last.</p>
+        <p>Located in the heart of Karachi on Main Boulevard, DHA Phase V, Meezaan brings together the richness of multi-cuisine flavours and the warmth of Pakistani hospitality. We don't just serve food — we create moods, memories and moments that last.</p>
       </div>
       <div class="foot-col">
         <h4>Quick Links</h4>
@@ -432,12 +438,25 @@ footer{background:var(--dark);color:#cfc8b4;padding:64px 0 30px}
   "use strict";
   var nav = document.getElementById("nav");
   var burger = document.getElementById("burger");
-  burger.addEventListener("click", function(){
+  var closeMenu = function(){
+    nav.classList.remove("open");
+    burger.setAttribute("aria-expanded","false");
+    document.body.style.removeProperty("overflow");
+  };
+  var toggleMenu = function(){
     var open = nav.classList.toggle("open");
     burger.setAttribute("aria-expanded", open ? "true" : "false");
+    document.body.style.overflow = open ? "hidden" : "";
+  };
+  burger.addEventListener("click", toggleMenu);
+  document.addEventListener("keydown", function(e){
+    if (e.key === "Escape" && nav.classList.contains("open")){ closeMenu(); burger.focus(); }
+  });
+  document.addEventListener("click", function(e){
+    if (nav.classList.contains("open") && !nav.contains(e.target)) closeMenu();
   });
   document.querySelectorAll("#mobileMenu a").forEach(function(a){
-    a.addEventListener("click", function(){ nav.classList.remove("open"); burger.setAttribute("aria-expanded","false"); });
+    a.addEventListener("click", function(){ closeMenu(); });
   });
   var onScroll = function(){ nav.classList.toggle("scrolled", window.scrollY > 24); };
   window.addEventListener("scroll", onScroll, {passive:true});
